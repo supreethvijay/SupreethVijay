@@ -454,11 +454,24 @@ a:hover .download-icon {
 }
 
 .projects-section {
-    padding: 80px;
+    padding: 80px 20px;
+    /* Added side padding for better containment */
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 60px 20px;
+    }
 }
 
 .expertise-section {
-    padding: 80px;
+    padding: 80px 20px;
+}
+
+@media (max-width: 768px) {
+    .expertise-section {
+        padding: 60px 20px;
+    }
 }
 
 /* Profile Card - "Player Card" style */
@@ -572,11 +585,17 @@ a:hover .download-icon {
 
 /* Section Common */
 section {
-    padding: 140px 0 80px;
+    padding: 100px 0 60px;
     /* padding: var(--spacing-xl) 0;*/
     position: relative;
     border-bottom: 1px dashed var(--border-color);
     /* Dashed level separator */
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0 40px;
+    }
 }
 
 section:last-of-type {
@@ -590,13 +609,13 @@ section:last-of-type {
 
 .section-subtitle {
     font-size: 1.1rem;
-    max-width: 800vw;
+    max-width: 800px;
 }
 
 /* Projects Grid - Level Panels */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-md);
 
 }
@@ -773,7 +792,7 @@ section:last-of-type {
 
 /* Credibility - Stats Bar */
 .credibility-section {
-    padding: 80px;
+    padding: 80px 20px;
     border-top: 1px dashed var(--border-color);
     border-bottom: 1px dashed var(--border-color);
 }
@@ -1036,7 +1055,10 @@ section:last-of-type {
 }
 
 .recognition-item {
-    min-width: 320px;
+    min-width: 280px;
+    /* Reduced from 320px */
+    width: 85vw;
+    /* Fluid width for mobile */
     max-width: 320px;
     background: var(--bg-card);
     border-radius: var(--radius-md);
@@ -1166,10 +1188,15 @@ section:last-of-type {
     background: var(--bg-card);
     padding: var(--spacing-lg);
     border-radius: var(--radius-md);
-    min-width: 250px;
+    min-width: auto;
+    /* Removed fixed min-width */
+    width: 100%;
+    /* Full width on mobile containers */
+    max-width: 350px;
+    /* Cap size */
     border: 1px solid var(--border-color);
     transition: var(--transition-fast);
-    width: 300px;
+    /* width: 300px; Removed fixed width */
 }
 
 .contact-card:hover {
@@ -1313,7 +1340,8 @@ section:last-of-type {
     }
 
     .hero-section {
-        padding-top: 140px;
+        padding-top: 100px;
+        padding-bottom: 40px;
     }
 
     h1 {
@@ -1359,6 +1387,19 @@ section:last-of-type {
     .contact-card,
     .contact-cards {
         width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-card {
+        padding: 24px;
+        /* Reduce padding on mobile */
+    }
+
+    .projects-section,
+    .expertise-section,
+    .credibility-section {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
 
@@ -1379,6 +1420,12 @@ section:last-of-type {
     .btn {
         width: 100%;
         text-align: center;
+    }
+
+    .client-logo-img {
+        height: 80px;
+        /* Smaller logos on mobile */
+        padding: 12px 20px;
     }
 }
 
@@ -1745,9 +1792,11 @@ button.read-more-link {
     background: var(--bg-card);
     border-radius: 20px;
     /* Highly rounded */
-    padding: 40px;
+    padding: 30px;
+    /* Reduced padding */
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
+    width: 100%;
     text-align: left;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
